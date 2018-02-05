@@ -9,29 +9,18 @@ Right: Lose
 def top10_subplot(volatility_series,title):
     fig,axes=plt.subplots(1,2,figsize=(10, 6))# 1 rows, 2 col
     # Top 10 loses
-    # volatility_series[:10].plot(ax=axes[0],kind="bar",color="darkred",x="id")
-    # ax.set_title("Losers"+title)
-    # ax.set_ylabel("% change")
-    # ax.set_xlabel("")
-    #
-    # # Top 10 gain
-    # volatility_series[-10:].plot(ax=axes[1],kind="bar",color="darkblue",x="id")
-    # ax.set_title("Gainers" + title)
-    # ax.set_ylabel("% change")
-    # ax.set_xlabel("")
-    # plt.show()
-
-    fig, axes = plt.subplots(1, 2, figsize=(10, 6))  # 1 rows, 2 col
-    ax = volatility_series[:10].plot.bar(ax=axes[0], facecolor="darkred")
+    ax=volatility_series[:10].plot(ax=axes[0],kind="bar",color="darkred",x="id")
     ax.set_title("Losers"+title)
     ax.set_ylabel("% change")
     ax.set_xlabel("")
-    ax = volatility_series[-10:].plot.bar(ax=axes[1], facecolor="darkblue")
+    # Top 10 gain
+    ax=volatility_series[-10:].plot(ax=axes[1],kind="bar",color="darkblue",x="id")
     ax.set_title("Gainers" + title)
     ax.set_ylabel("% change")
     ax.set_xlabel("")
     fig.suptitle(title)
     plt.show()
+
 
 
 
